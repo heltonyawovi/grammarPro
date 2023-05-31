@@ -36,7 +36,6 @@ import os
 import openai
 
 
-# os.environ["OPENAI_API_KEY"] = "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"
 os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY_HERE"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
