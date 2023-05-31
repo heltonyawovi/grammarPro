@@ -44,8 +44,8 @@ use App\Http\Controllers\Request\BaseApiRequest;
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo/logo.svg" alt="Logo" />
+                        <a class="navbar-brand pt-2 pb-2" href="index.html">
+                            <img src="{{asset('theme/assets/images/logo/logo-2.png')}}" alt="Logo" />
                         </a>
                         <button class="navbar-toggler">
                             <span class="toggler-icon"> </span>
@@ -69,7 +69,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                                     <a class="ud-menu-scroll" href="#translation">Translation</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="ud-menu-scroll" href="#reference-checker">Reference Checker</a>
+                                    <a class="ud-menu-scroll" href="#reference-check">Reference Checker</a>
                                 </li>
                             </ul>
                         </div>
@@ -104,12 +104,12 @@ use App\Http\Controllers\Request\BaseApiRequest;
                         </p>
                         <ul class="ud-hero-buttons">
                             <li>
-                                <a href="https://links.uideck.com/play-bootstrap-download" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-white-btn">
+                                <a href="#proofreading" class="ud-main-btn ud-white-btn ud-menu-scroll">
                                     Proofread now
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/uideck/play-bootstrap" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
+                                <a href="#translation" class="ud-main-btn ud-link-btn ud-menu-scroll">
                                     Translate a content <i class="lni lni-arrow-right"></i>
                                 </a>
                             </li>
@@ -146,7 +146,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                             <p class="ud-feature-desc">
                                 Reviewing written content to correct errors, improve clarity, grammar, and ensure accuracy and coherence.
                             </p>
-                            <a href="javascript:void(0)" class="ud-feature-link">
+                            <a href="#proofreading" class="ud-feature-link ud-menu-scroll">
                                 Proofread Now
                             </a>
                         </div>
@@ -162,7 +162,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                             <p class="ud-feature-desc">
                                 Converting written text from one language to another while maintaining accuracy, meaning, and cultural nuances.
                             </p>
-                            <a href="javascript:void(0)" class="ud-feature-link">
+                            <a href="#translation" class="ud-feature-link ud-menu-scroll">
                                 Translate Now
                             </a>
                         </div>
@@ -178,7 +178,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                             <p class="ud-feature-desc">
                                 Verifying the accuracy, reliability, and credibility of information by cross-referencing with trusted sources or citations.
                             </p>
-                            <a href="javascript:void(0)" class="ud-feature-link">
+                            <a href="#reference-check" class="ud-feature-link ud-menu-scroll">
                                 Check Now
                             </a>
                         </div>
@@ -194,7 +194,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                             <p class="ud-feature-desc">
                                 A comprehensive solution that combines proofreading, translation, and reference checking for accurate and high-quality content.
                             </p>
-                            <a href="javascript:void(0)" class="ud-feature-link">
+                            <a href="#home" class="ud-feature-link ud-menu-scroll">
                                 Start Now
                             </a>
                         </div>
@@ -232,6 +232,10 @@ use App\Http\Controllers\Request\BaseApiRequest;
                                 </div>
                             </div>
                             <button class="ud-main-btn" type="submit">Proofread now!</button>
+                            <div class="d-none mt-5 align-items-center loading-components">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -302,6 +306,10 @@ use App\Http\Controllers\Request\BaseApiRequest;
                                 </div>
                             </div>
                             <button class="ud-main-btn bg-warning" type="submit">Translate now!</button>
+                            <div class="d-none mt-5 align-items-center loading-components">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -321,7 +329,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
         <div class="container">
             <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
                 <div class="ud-about-content-wrapper">
-                    <form class="form form-vertical form-grammarPro" id="form-grammarPro" data-target="reference-check" action="{{route('manuscript.support.from.text.file').'/'}}" method="GET" data-task="{{BaseApiRequest::API_LLM_STUDENT_TASK_SUPPORT_REFERENCE_CHECKING_VALUE}}" data-params="">
+                    <form class="form form-vertical form-grammarPro" id="form-grammarPro" data-target="reference-check" action="{{route('manuscript.support.from.text.file').'/'}}" method="GET" data-task="{{BaseApiRequest::API_LLM_STUDENT_TASK_REFERENCE_CHECKING_VALUE}}" data-params="">
                         @csrf
                         <div class="ud-about-content">
                             <span class="tag bg-dark">Reference Checking</span>
@@ -336,6 +344,10 @@ use App\Http\Controllers\Request\BaseApiRequest;
                                 </div>
                             </div>
                             <button class="ud-main-btn bg-dark" type="submit">Check now!</button>
+                            <div class="d-none mt-5 align-items-center loading-components">
+                                <strong>Loading...</strong>
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -372,7 +384,7 @@ use App\Http\Controllers\Request\BaseApiRequest;
                     <div class="col-xl-3 col-lg-3 col-md-6">
                         <div class="ud-widget">
                             <a href="index.html" class="ud-footer-logo">
-                                <img src="assets/images/logo/logo.svg" alt="logo" />
+                                <img src="{{asset('theme/assets/images/logo/logo.png')}}" alt="logo" />
                             </a>
                             <p class="ud-widget-desc">
                                 A comprehensive solution that combines proofreading, translation, and reference checking for accurate and high-quality content.

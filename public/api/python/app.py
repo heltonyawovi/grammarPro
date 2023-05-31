@@ -173,6 +173,58 @@ def getManuscriptTranslation():
     return response
 
 
+@app.route("/manuscript-reference-check", methods=["GET"])
+def getManuscriptReferenceCheck():
+    requestJson = request.args
+    prompt = """Give the correct version of this paper reference list:"""
+    # prompt = """Give the translation into %s of this:""" %(requestJson['lang'])
+
+    datar = """
+
+
+World Health Organization. Global Status Report on Road Safety 2018; Technical Report; World Health Organization: Geneva, Switzerland, 2018.
+Bucsuházy, K.; Matuchová, E.; Žuvala, R.; Moravcová, P.; Kostíková, M.; Mikulec, R. Human factors contributing to the road traffic accident occurrence. Transp. Res. Procedia 2020, 45, 555–561. doi: 10.1016/j.trpro.2020.11.073.
+
+Studer, L.; Paglino, V.; Gandini, P.; Stelitano, A.; Triboli, U.; Gallo, F.; Andreoni, G. Analysis of the Relationship between Road Accidents and Psychophysical State of Drivers through Wearable Devices. Appl. Sci. 2018, 8, 1230. doi: 10.3390/app8051230.
+
+Ditcharoen, A.; Chhour, B.; Traikunwaranon, T.; Aphivongpanya, N.; Maneerat, K.; Ammarapala, V. Road traffic accidents severity factors: A review paper. In Proceedings of the 2018 5th International Conference on Business and Industrial Research (ICBIR), Bangkok, Thailand, 17–18 May 2018; pp. 339–343. doi: 10.1016/j.sbspro.2018.05.132.
+
+Buss, D.; Abishev, K.; Baltabekova, A. Driver‘s reliability and its effect on road traffic safety. Procedia Comput. Sci. 2019, 149, 463–466. doi: 10.1016/j.procs.2019.09.195.
+
+Rejoice, B.; Amin, A.; Zala, L. Development of Model for Road Crashes and Identification of Accident Spots. Int. J. Intell. Transp. Syst. Res. 2020, 19, 99–111. doi: 10.1504/IJITSR.2020.108941.
+
+Chen, Z.; Cao, L.; Wang, Q.; Khattak, H.A. YOLOv5-Based Vehicle Detection Method for High-Resolution UAV Images. Mob. Inf. Syst. 2022, 2022, 1828848. doi: 10.1155/2022/1828848. 
+    """
+    if "file" in requestJson:
+        data = llm.llmFromFileContent(
+            filePath=requestJson["file"],
+            prompt=prompt,
+            splitInputAndAppendOutputs=True,
+        )
+    elif "text" in requestJson:
+        data = llm.llmFromTextContent(
+            textContent=requestJson["text"],
+            prompt=prompt,
+            splitInputAndAppendOutputs=True,
+        )
+
+    dictToReturn = {
+        # 'result': {'data': prompt, 'lang':lang},
+        # "result": {"data": datar, "lang": lang},
+        "result": {
+            "data": data[0] if data[0] != "" else datar,
+            "originalText": "".join(data[1]),
+        },
+        # 'result': {'data': "test"},
+        # 'result': {'data': llm.llmFromTextContent(textContent= requestJson['text'], prompt=prompt, splitInputAndAppendOutputs=True), lang:lang},
+        "success": True,
+    }
+    response = jsonify(dictToReturn)
+    # print (dictToReturn)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
+
 @app.route("/manuscript-conversion", methods=["GET"])
 def getManuscriptConversion():
     requestJson = request.args

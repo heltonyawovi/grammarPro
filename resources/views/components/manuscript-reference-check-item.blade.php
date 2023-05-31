@@ -7,8 +7,8 @@
             <div class="ud-about-content-wrapper">
 
                 <div class="ud-about-content max-w-fit">
-                    <span class="tag bg-success">Translation</span>
-                    <h2>Your translated manuscript result is here</h2>
+                    <span class="tag bg-success">Reference Checking</span>
+                    <h2>Your corrected references list is here</h2>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
@@ -24,7 +24,7 @@
                         <div class="col-lg-6">
                             <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
                                 <div class="ud-testimonial-content">
-                                    <h3 class="text-success pb-5">Translated</h3>
+                                    <h3 class="text-success pb-5">Checked</h3>
                                     <p>
                                         {!! nl2br(trim($data)) !!}
                                     </p>

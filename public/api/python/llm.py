@@ -36,7 +36,8 @@ import os
 import openai
 
 
-os.environ["OPENAI_API_KEY"] = "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 "
+# os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY_HERE"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # As undesireable as it might be, more often than not there is extremely useful information embedded
@@ -74,7 +75,7 @@ def llmFromTextContent(
     )
     texts = text_splitter.split_text(textContent)
 
-    return (result, texts) # Comment later
+    # return (result, texts) # Comment later
 
     # len(texts)
 

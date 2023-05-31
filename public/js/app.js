@@ -11,7 +11,7 @@ $(function () {
                 if (!thisForm.hasClass("disabled")) {
                     // if (!thisForm.hasClass("disabled") && thisForm.find(".manuscript-textarea").val().trim() != "") {
                     thisForm.addClass("disabled");
-                    // show($(".loading-components"));
+                    show($(".loading-components"));
                     // show($(".results-container"), true);
                     show($(".results-container[data-target='" + thisForm.attr("data-target") + "']"), true);
                     // $(".result-list").html("");
@@ -52,6 +52,8 @@ $(function () {
 
                         // $(".keywords-list").html(data.keywordsHtml);
                         thisForm.removeClass("disabled");
+                        hide($(".loading-components"));
+
                         // hide($(".loading-components"));
                         addEvents();
                     }, function (data) {

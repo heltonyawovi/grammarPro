@@ -14,7 +14,7 @@ class BaseApiRequest
     public const API_RESULT_RESOURCE_KEY_MESSAGE = "message";
     public const API_RESULT_RESOURCE_KEY_DATA = "data";
 
-    
+
     public const API_LLM_STUDENT_TASK_SUMMARIZATION_VALUE = "manuscript-summary"; // - Abstract, title and keyword generation
     public const API_LLM_STUDENT_TASK_PROOFREAD_VALUE = "manuscript-proofread"; // - Proofreading, Grammar check and correction, Reference list correction
     public const API_LLM_STUDENT_TASK_ACCEPTANCE_EVALUATION_VALUE = "manuscript-acceptance-evaluation"; // - Acceptance probability to a given core rank (for conference) or impact factor (for journal)
@@ -23,7 +23,7 @@ class BaseApiRequest
     public const API_LLM_STUDENT_TASK_TRANSLATION_VALUE = "manuscript-translation"; // - Manuscript Translation (any language, mainly Japanese to English, English to Japanese)
     public const API_LLM_STUDENT_TASK_REVIEW_SIMULATION_VALUE = "manuscript-review-simulation"; // - Review  simulation (Give work limitations, ask questions…)
     public const API_LLM_STUDENT_TASK_SUPPORT_MATERIAL_GENERATION_VALUE = "manuscript-support-material"; // - Conference presentation material generation
-    public const API_LLM_STUDENT_TASK_SUPPORT_REFERENCE_CHECKING_VALUE = "manuscript-support-reference-check"; // - Reference checker (check and correct references)
+    public const API_LLM_STUDENT_TASK_REFERENCE_CHECKING_VALUE = "manuscript-reference-check"; // - Reference checker (check and correct references)
 
 
 
