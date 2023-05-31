@@ -1,4 +1,7 @@
-## How to install and use this project
+## ScreenShot of this app :
+![ScreenShot of this app](/screenshots/screenshot-full-GrammarPro.png)
+
+## How to install and use this project "
 
 After downloading this repository and extracting it, please rename from "grammarPro-main"  to "grammarPro".
 
