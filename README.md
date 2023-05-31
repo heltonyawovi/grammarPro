@@ -1,7 +1,7 @@
 ## ScreenShot of this app :
 ![ScreenShot of this app](/screenshots/screenshot-full-GrammarPro.png)
 
-## How to install and use this project "
+## How to install and use this project :
 
 After downloading this repository and extracting it, please rename from "grammarPro-main"  to "grammarPro".
 
@@ -25,7 +25,7 @@ NB: When you get any error during the following steps, please copy the error and
 This last command "php artisan serve" will start the PHP Laravel server. Laravel is a php framework that makes PHP development faster.
 
 
-3 - Open Finder on your MAC and go tho the file "/path-to-grammarPro-folder-you-dowloaded/public/api/python/llm.py" and change at line 39  or 40 “YOUR_API_KEY_HERE” with your ChatGPT API Key (os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY_HERE")
+3 - Open Finder on your MAC and go tho the file "/path-to-grammarPro-folder-you-dowloaded/public/api/python/llm.py" and change at line 39  “YOUR_API_KEY_HERE” with your ChatGPT API Key (os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY_HERE")
 
 4 - Open a new terminal and enter these commands one after the other:
 
