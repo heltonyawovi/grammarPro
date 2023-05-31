@@ -1,0 +1,19 @@
+/* Template from https://github.com/uideck/play-bootstrap/tree/main */
+.max-w-fit{
+    max-width: fit-content !important;
+}
+
+.diff-container del {
+    --bs-bg-opacity: 1;
+    color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+    /* background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important; */
+
+}
+
+.diff-container ins {
+    --bs-bg-opacity: 1;
+    color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+    /* background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important; */
+    text-decoration: none;
+
+}

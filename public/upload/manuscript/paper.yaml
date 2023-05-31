@@ -1,0 +1,4 @@
+train: /content/car_crash_dataset
+val: /content/car_crash_dataset/NEW
+nc: 1
+names: ['accident']
