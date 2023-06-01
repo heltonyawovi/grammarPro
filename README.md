@@ -41,6 +41,8 @@ This last command "php artisan serve" will start the PHP Laravel server. Laravel
 
     cd "path-to-grammarPro-folder-you-dowloaded/public/api/python/"
 
+    export FLASK_ENV=development
+
     flask run
 
 This last command "flask run" will start the Flask server. Flask is a python framework that helps deploying python scripts as servers.
